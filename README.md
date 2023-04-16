@@ -1,4 +1,6 @@
-# RetinaFace
+# RetinaFace for macos
+
+**Note:** this is the same as the standard [RetinaFace](https://github.com/serengil/retinaface) except the tensorflow dependency is tensorflow-macos
 
 <div align="center">
 
