@@ -4,19 +4,20 @@
 
 <div align="center">
 
-[![PyPI Downloads](https://static.pepy.tech/personalized-badge/retina-face?period=total&units=international_system&left_color=grey&right_color=blue&left_text=pypi%20downloads)](https://pepy.tech/project/retina-face)
+[![PyPI Downloads](https://static.pepy.tech/personalized-badge/retina-face?period=total&units=international_system&left_color=grey&right_color=blue&left_text=pip%20downloads)](https://pepy.tech/project/retina-face)
 [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/retina-face?color=green&label=conda%20downloads)](https://anaconda.org/conda-forge/retina-face)
-[![Stars](https://img.shields.io/github/stars/serengil/retinaface?color=yellow)](https://github.com/serengil/retinaface)
+[![Stars](https://img.shields.io/github/stars/serengil/retinaface?color=yellow&style=flat&label=%E2%AD%90%20stars)](https://github.com/serengil/retinaface/stargazers)
 [![License](http://img.shields.io/:license-MIT-green.svg?style=flat)](https://github.com/serengil/retinaface/blob/master/LICENSE)
+[![Tests](https://github.com/serengil/retinaface/actions/workflows/tests.yml/badge.svg)](https://github.com/serengil/retinaface/actions/workflows/tests.yml)
+
+[![Blog](https://img.shields.io/:blog-sefiks.com-blue.svg?style=flat&logo=wordpress)](https://sefiks.com)
+[![YouTube](https://img.shields.io/:youtube-@sefiks-red.svg?style=flat&logo=youtube)](https://www.youtube.com/@sefiks?sub_confirmation=1)
+[![Twitter](https://img.shields.io/:follow-@serengil-blue.svg?style=flat&logo=twitter)](https://twitter.com/intent/user?screen_name=serengil)
 [![Support me on Patreon](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fshieldsio-patreon.vercel.app%2Fapi%3Fusername%3Dserengil%26type%3Dpatrons&style=flat)](https://www.patreon.com/serengil?repo=retinaface)
 [![GitHub Sponsors](https://img.shields.io/github/sponsors/serengil?logo=GitHub&color=lightgray)](https://github.com/sponsors/serengil)
 
 [![DOI](http://img.shields.io/:DOI-10.1109/ASYU50717.2020.9259802-blue.svg?style=flat)](https://doi.org/10.1109/ASYU50717.2020.9259802)
 [![DOI](http://img.shields.io/:DOI-10.1109/ICEET53442.2021.9659697-blue.svg?style=flat)](https://doi.org/10.1109/ICEET53442.2021.9659697)
-
-[![Blog](https://img.shields.io/:blog-sefiks.com-blue.svg?style=flat&logo=wordpress)](https://sefiks.com)
-[![YouTube](https://img.shields.io/:youtube-@sefiks-red.svg?style=flat&logo=youtube)](https://www.youtube.com/@sefiks?sub_confirmation=1)
-[![Twitter](https://img.shields.io/:follow-@serengil-blue.svg?style=flat&logo=twitter)](https://twitter.com/intent/user?screen_name=serengil)
 
 </div>
 
@@ -88,6 +89,8 @@ for face in faces:
 
 <p align="center"><img src="https://raw.githubusercontent.com/serengil/retinaface/master/tests/outputs/alignment-procedure.png" width="80%" height="80%"></p>
 
+If you prefer to prioritize alignment before detection, you may opt to set the `align_first` parameter to True. By following this approach, you will eliminate the black pixel areas that arise as a result of alignment following detection. This functionality is applicable only when the provided image contains a single face.
+
 **Face Recognition** - [`Demo`](https://youtu.be/WnUVYQP4h44)
 
 Notice that face recognition module of insightface project is [ArcFace](https://sefiks.com/2020/12/14/deep-face-recognition-with-arcface-in-keras-and-python/), and face detection module is RetinaFace. ArcFace and RetinaFace pair is wrapped in [deepface](https://github.com/serengil/deepface) library for Python. Consider to use deepface if you need an end-to-end face recognition pipeline.
@@ -104,6 +107,10 @@ print(obj["verified"])
 
 Notice that ArcFace got 99.40% accuracy on [LFW data set](https://sefiks.com/2020/08/27/labeled-faces-in-the-wild-for-face-recognition/) whereas human beings just have 97.53% confidence.
 
+## Contribution [![Tests](https://github.com/serengil/retinaface/actions/workflows/tests.yml/badge.svg)](https://github.com/serengil/retinaface/actions/workflows/tests.yml)
+
+Pull requests are more than welcome! You should run the unit tests and linting locally before creating a PR. Commands `make test` and `make lint` will help you to run it locally. Once a PR created, GitHub test workflow will be run automatically and unit test results will be available in [GitHub actions](https://github.com/serengil/retinaface/actions) before approval.
+
 ## Support
 
 There are many ways to support a project. Starring⭐️ the repo is just one 🙏
@@ -116,7 +123,7 @@ You can also support this work on [Patreon](https://www.patreon.com/serengil?rep
 
 ## Acknowledgements
 
-This work is mainly based on the [insightface](https://github.com/deepinsight/insightface) project and [retinaface](https://arxiv.org/pdf/1905.00641.pdf) paper; and it is heavily inspired from the re-implementation of [retinaface-tf2](https://github.com/StanislasBertrand/RetinaFace-tf2) by [Stanislas Bertrand](https://github.com/StanislasBertrand). Finally, Bertrand's [implemenation](https://github.com/StanislasBertrand/RetinaFace-tf2/blob/master/rcnn/cython/cpu_nms.pyx) uses [Fast R-CNN](https://arxiv.org/abs/1504.08083) written by [Ross Girshick](https://github.com/rbgirshick/fast-rcnn) in the background. All of those reference studies are licensed under MIT license.
+This work is mainly based on the [insightface](https://github.com/deepinsight/insightface) project and [retinaface](https://arxiv.org/pdf/1905.00641.pdf) paper; and it is heavily inspired from the re-implementation of [retinaface-tf2](https://github.com/StanislasBertrand/RetinaFace-tf2) by [Stanislas Bertrand](https://github.com/StanislasBertrand). Finally, Bertrand's [implementation](https://github.com/StanislasBertrand/RetinaFace-tf2/blob/master/rcnn/cython/cpu_nms.pyx) uses [Fast R-CNN](https://arxiv.org/abs/1504.08083) written by [Ross Girshick](https://github.com/rbgirshick/fast-rcnn) in the background. All of those reference studies are licensed under MIT license.
 
 ## Citation
 
@@ -148,7 +155,7 @@ If you are using RetinaFace in your research, please consider to cite its [origi
 }
 ```
 
-Finally, if you use this RetinaFace re-implementation in your GitHub projects, please add retina-face dependency in the requirements.txt.
+Finally, if you use this RetinaFace re-implementation in your GitHub projects, please add `retina-face` dependency in the requirements.txt.
 
 ## Licence
 
